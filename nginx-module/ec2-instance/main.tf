@@ -1,5 +1,5 @@
 resource "aws_security_group" "ec2_sec_grp" {
-  vpc_id = aws_vpc.nginx_vpc.id
+  vpc_id = var.vpc_id
   name   = "ec2-sg"
 
   ingress {
@@ -28,7 +28,7 @@ resource "aws_security_group" "ec2_sec_grp" {
 resource "aws_instance" "nginx_server" {
   ami                         = var.ami_id
   instance_type               = var.instance_type
-  subnet_id                   = aws_subnet.public_subnet_a.id
+  subnet_id                   = var.subnet_id
   vpc_security_group_ids      = [aws_security_group.ec2_sec_grp.id]
   associate_public_ip_address = true
   
