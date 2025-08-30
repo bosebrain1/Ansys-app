@@ -17,7 +17,7 @@ module "network" {
   az_c                = var.az_c
 }
 
-module "network" {
+module "ec2-instance" {
   source = "./modules/ec2-instance"
   ami_id              = var.ami_id
   instance_type       = var.instance_type
