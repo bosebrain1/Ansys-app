@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "network" {
-  source = "./modules/network"
+  source = "./nginx-module/network"
   region               = var.region
   vpc_cidr             = var.vpc_cidr
   public_subnet_a_cidr = var.public_subnet_a_cidr
@@ -18,7 +18,7 @@ module "network" {
 }
 
 module "ec2-instance" {
-  source = "./modules/ec2-instance"
+  source = "./nginx-module/ec2-instance"
   ami_id              = var.ami_id
   instance_type       = var.instance_type
 }
