@@ -39,3 +39,15 @@ variable "private_subnet_c_cidr" {
   description = "CIDR for private subnet C"
   default     = "10.0.13.0/24"
 }
+
+variable "az_a" {
+  default = "us-east-1a"
+}
+
+variable "az_b" {
+  default = "us-east-1b"
+}
+
+variable "az_c" {
+  default = "us-east-1c"
+}
