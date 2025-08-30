@@ -21,6 +21,8 @@ module "ec2-instance" {
   source = "./nginx-module/ec2-instance"
   ami_id              = var.ami_id
   instance_type       = var.instance_type
+  vpc_id        = module.network.vpc_id
+  subnet_id     = module.network.public_subnet_ids[0]
 }
 
 
